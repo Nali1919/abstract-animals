@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+
 		Scanner s = new Scanner(System.in);
 
 		System.out.println("Che animale vuoi vedere? Cane o Passerotto?");
@@ -17,7 +18,7 @@ public class Main {
 			c.dormi();
 			c.verso();
 			c.mangia();
-			c.nuota();
+		    faiNuotare(c);
 			break;
 
 		case "Passerotto":
@@ -27,22 +28,21 @@ public class Main {
 			p.dormi();
 			p.verso();
 			p.mangia();
-			p.Vola();
+			faiVolare(p);
 
 			break;
 
 		default:
 			System.out.println("Hai inserito un animale che non esiste");
 		}
-
+		
+	}
+	public static void faiVolare(Ivolante animale) {
+		animale.Vola();
 	}
 
-	public static void faiNuotare(Ivolante Animale) {
-		Animale.Vola();
-	}
-
-	public static void faiVolare(Inuotante Animale) {
-		Animale.nuota();
+	public static void faiNuotare(Inuotante animale) {
+		animale.nuota();
 	}
 
 }
